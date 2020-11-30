@@ -3,27 +3,27 @@ from typing import List, Tuple
 
 def check_palindrome_examples(word_list: List) -> Tuple:
     """Takes in a list of words that could or could not be a palindrome
-       and outputs a list of palindromes and a list of non-palendromes
+       and outputs a list of palindromes and a list of non-palindromes
 
-    :param word_list: List of words that could or could not be a palendrome
+    :param word_list: List of words that could or could not be a palindrome
     :type word_list: List
-    :returns: Tuple of Palendromes and Non-palendromes
+    :returns: Tuple of palindromes and Non-palindromes
     :rtype: Tuple
     """
 
-    palendromes = []
+    palindromes = []
     non_palendroms = []
 
     # Solution code here
 
 
-    return palendromes, non_palendroms
+    return palindromes, non_palendroms
 
 
 def run_tests() -> None:
-    """function for running palendrome tests"""
+    """function for running palindrome tests"""
 
-    # Out list of words to check for palendromes
+    # Out list of words to check for palindromes
 
     word_list = [
         'Madam',
@@ -36,11 +36,11 @@ def run_tests() -> None:
         'javascript'
     ]
 
-    palendromes, non_palendromes = check_palindrome_examples(word_list)
+    palindromes, non_palindromes = check_palindrome_examples(word_list)
 
     # Print out our answers to check them
 
-    print(f'The following words are palendromes: {"".join(palendromes)}')
-    print(f'The following words are not palendromes: {"".join(non_palendromes)}')
+    print(f'The following words are palindromes: {", ".join(palindromes)}')
+    print(f'The following words are not palindromes: {", ".join(non_palindromes)}')
 
 run_tests()
