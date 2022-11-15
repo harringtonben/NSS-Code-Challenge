@@ -1,4 +1,4 @@
-# NSS-Code-Challenge(Python): SWAPI API
+# NSS-Code-Challenge(Python): Poke API
 
 
 
