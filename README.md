@@ -1,117 +1,57 @@
-# NSS-Code-Challenge(Python): Poke API
+# NSS-Code-Challenge(Python): SWAPI API
 
 
 
-###### This is a code challenge that leverages the Poke API to get data about Pikachu and return a full object of enriched data.
+###### This is a code challenge that leverages the Star Wars API to get data about Luke Skywalker and return a full object of enriched data.
 
 ## The Objective
 
-The Poke API returns relational data from other endpoints as api urls like so:
+The Star wars API returns relational data from other endpoints as api urls like so:
 ```
 {
-    "abilities": [
-        {
-            "ability": {
-                "name": "static",
-                "url": "https://pokeapi.co/api/v2/ability/9/"
-            },
-            "is_hidden": false,
-            "slot": 1
-        },
-        {
-            "ability": {
-                "name": "lightning-rod",
-                "url": "https://pokeapi.co/api/v2/ability/31/"
-            },
-            "is_hidden": true,
-            "slot": 3
-        }
+    'name': 'Luke Skywalker',
+    'height': '172',
+    'mass': '77',
+    'hair_color': 'blond',
+    'skin_color': 'fair',
+    'eye_color': 'blue',
+    'birth_year': '19BBY',
+    'gender': 'male',
+    'homeworld': 'http://swapi.dev/api/planets/1/',
+    'films': [
+        'http://swapi.dev/api/films/1/',
+        'http://swapi.dev/api/films/2/',
+        'http://swapi.dev/api/films/3/',
+        'http://swapi.dev/api/films/6/'
     ],
-    "base_experience": 112,
-    "forms": [
-        {
-            "name": "pikachu",
-            "url": "https://pokeapi.co/api/v2/pokemon-form/25/"
-        }
+    'species': [],
+    'vehicles': [
+        'http://swapi.dev/api/vehicles/14/',
+        'http://swapi.dev/api/vehicles/30/'
     ],
+    'starships': [
+        'http://swapi.dev/api/starships/12/',
+        'http://swapi.dev/api/starships/22/'
+    ],
+    'created': '2014-12-09T13:50:51.644000Z',
+    'edited': '2014-12-20T21:17:56.891000Z',
+    'url': 'http://swapi.dev/api/people/1/'
 }
 ```
 
-We want to return an object that tells us about Pikachus forms, like this:
-```
-{
-    "abilities": [
-        {
-            "ability": {
-                "name": "static",
-                "url": "https://pokeapi.co/api/v2/ability/9/"
-            },
-            "is_hidden": false,
-            "slot": 1
-        },
-        {
-            "ability": {
-                "name": "lightning-rod",
-                "url": "https://pokeapi.co/api/v2/ability/31/"
-            },
-            "is_hidden": true,
-            "slot": 3
-        }
-    ],
-    "base_experience": 112,
-    "form": {
-        "form_name": "",
-        "form_names": [],
-        "form_order": 1,
-        "id": 25,
-        "is_battle_only": false,
-        "is_default": true,
-        "is_mega": false,
-        "name": "pikachu",
-        "names": [],
-        "order": 36,
-        "pokemon": {
-            "name": "pikachu",
-            "url": "https://pokeapi.co/api/v2/pokemon/25/"
-        },
-        "sprites": {
-            "back_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/25.png",
-            "back_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/female/25.png",
-            "back_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/25.png",
-            "back_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/shiny/female/25.png",
-            "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
-            "front_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/female/25.png",
-            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/25.png",
-            "front_shiny_female": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/female/25.png"
-        },
-        "types": [
-            {
-                "slot": 1,
-                "type": {
-                    "name": "electric",
-                    "url": "https://pokeapi.co/api/v2/type/13/"
-                }
-            }
-        ],
-        "version_group": {
-            "name": "red-blue",
-            "url": "https://pokeapi.co/api/v2/version-group/1/"
-        }
-    }
-}
-```
+In order to return an object with all of the data about Luke Skywalker, we will have to iterate over this object and get all of the data associated with luke and transform this object to repalce the urls with the necessary data
 
 ## Project Setup
 To make things easier, this project makes use of a `Makefile` to wrap all of the commands you might need into easier commands. To setup the environment type this into your terminal:
-`make setup_project`
+`make setup_project && source nss-code-challenge/bin/activate`
 
 If you are using windows, then type:
-`pip install poetry && poetry install`
+`python -m venv nss-code-challenge && source nss-code-challenge/bin/activate && pip install -r requirements.txt && pip install -e .`
 
 ## To Run The Code
 In order to be able to test the solution, you can run:
 `make run_solution`
 or on windows:
-`poetry run python3 scripts/run_solution.py`
+`python3 scripts/run_solution.py`
 
 This will run the solution and print the return from `get_all_the_data` in `challenge/challenge.py`
