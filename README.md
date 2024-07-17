@@ -43,15 +43,15 @@ In order to return an object with all of the data about Luke Skywalker, we will 
 
 ## Project Setup
 To make things easier, this project makes use of a `Makefile` to wrap all of the commands you might need into easier commands. To setup the environment type this into your terminal:
-`make setup_project && source nss-code-challenge/bin/activate`
+`make setup_project`
 
 If you are using windows, then type:
-`python -m venv nss-code-challenge && source nss-code-challenge/bin/activate && pip install -r requirements.txt && pip install -e .`
+`pip install poetry && poetry install`
 
 ## To Run The Code
 In order to be able to test the solution, you can run:
 `make run_solution`
 or on windows:
-`python3 scripts/run_solution.py`
+`poetry run python3 scripts/run_solution.py`
 
 This will run the solution and print the return from `get_all_the_data` in `challenge/challenge.py`

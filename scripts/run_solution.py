@@ -1,4 +1,5 @@
 """Script used for running code solution"""
+from pprint import pprint
 
 from challenge.challenge import get_all_the_data
 
@@ -9,7 +10,7 @@ def run_solution():
 
     print('*' * 100)
     print('*' * 38 + 'And the results are in!!' + '*' * 38)
-    print(results)
+    pprint(results)
     print('*' * 100)
 
 
