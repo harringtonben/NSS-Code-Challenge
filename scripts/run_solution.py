@@ -1,6 +1,5 @@
 """Script used for running code solution"""
 from pprint import pprint
-
 from challenge.challenge import get_all_the_data
 
 def run_solution():
