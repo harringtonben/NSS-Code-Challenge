@@ -10,6 +10,7 @@ packages = [{include = "challenge"}]
 python = "^3.11"
 requests = "^2.32.3"
 ipdb = "^0.13.13"
+pytest = "^8.3.2"
 
 
 [build-system]

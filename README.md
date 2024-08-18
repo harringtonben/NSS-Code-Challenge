@@ -7,39 +7,71 @@
 ## The Objective
 
 The Star wars API returns relational data from other endpoints as api urls like so:
-```
+```json
 {
-    'name': 'Luke Skywalker',
-    'height': '172',
-    'mass': '77',
-    'hair_color': 'blond',
-    'skin_color': 'fair',
-    'eye_color': 'blue',
-    'birth_year': '19BBY',
-    'gender': 'male',
-    'homeworld': 'http://swapi.dev/api/planets/1/',
-    'films': [
-        'http://swapi.dev/api/films/1/',
-        'http://swapi.dev/api/films/2/',
-        'http://swapi.dev/api/films/3/',
-        'http://swapi.dev/api/films/6/'
-    ],
-    'species': [],
-    'vehicles': [
-        'http://swapi.dev/api/vehicles/14/',
-        'http://swapi.dev/api/vehicles/30/'
-    ],
-    'starships': [
-        'http://swapi.dev/api/starships/12/',
-        'http://swapi.dev/api/starships/22/'
-    ],
-    'created': '2014-12-09T13:50:51.644000Z',
-    'edited': '2014-12-20T21:17:56.891000Z',
-    'url': 'http://swapi.dev/api/people/1/'
+	"name": "Luke Skywalker",
+	"height": "172",
+	"mass": "77",
+	"hair_color": "blond",
+	"skin_color": "fair",
+	"eye_color": "blue",
+	"birth_year": "19BBY",
+	"gender": "male",
+	"homeworld": "https://swapi.dev/api/planets/1/",
+	"films": [
+		"https://swapi.dev/api/films/1/",
+		"https://swapi.dev/api/films/2/",
+		"https://swapi.dev/api/films/3/",
+		"https://swapi.dev/api/films/6/"
+	],
+	"species": [],
+	"vehicles": [
+		"https://swapi.dev/api/vehicles/14/",
+		"https://swapi.dev/api/vehicles/30/"
+	],
+	"starships": [
+		"https://swapi.dev/api/starships/12/",
+		"https://swapi.dev/api/starships/22/"
+	],
+	"created": "2014-12-09T13:50:51.644000Z",
+	"edited": "2014-12-20T21:17:56.891000Z",
+	"url": "https://swapi.dev/api/people/1/"
 }
 ```
 
-In order to return an object with all of the data about Luke Skywalker, we will have to iterate over this object and get all of the data associated with luke and transform this object to replace the urls with the necessary data
+In order to return an object with all of the data about Luke Skywalker, we will have to iterate over this object and get all of the data associated with luke and transform this object to replace the urls with the necessary data to look like this
+
+```json
+{
+        "name": "Luke Skywalker",
+        "height": "172",
+        "mass": "77",
+        "hair_color": "blond",
+        "skin_color": "fair",
+        "eye_color": "blue",
+        "birth_year": "19BBY",
+        "gender": "male",
+        "homeworld": "Tatooine",
+        "films": [
+            "A New Hope",
+            "The Empire Strikes Back",
+            "Return of the Jedi",
+            "Revenge of the Sith"
+        ],
+        "species": [],
+        "vehicles": [
+            "Snowspeeder",
+            "Imperial Speeder Bike"
+        ],
+        "starships": [
+            "X-wing",
+            "Imperial shuttle"
+        ],
+        "created": "2014-12-09T13:50:51.644000Z",
+        "edited": "2014-12-20T21:17:56.891000Z",
+        "url": "https://swapi.dev/api/people/1/"
+    }
+```
 
 ## Docs For Reference
  Documentation for the star wars api can be found here: https://swapi.dev/
@@ -58,3 +90,9 @@ or on windows:
 `poetry run python3 scripts/run_solution.py`
 
 This will run the solution and print the return from `get_all_the_data` in `challenge/challenge.py`
+
+## To Check Your Solution
+To check if your code is correct, you can run:
+`make check_solution`
+or on windows:
+`poetry run pytest tests/check_solution.py::test_check_solution -s -vvv`
