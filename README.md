@@ -39,7 +39,10 @@ The Star wars API returns relational data from other endpoints as api urls like 
 }
 ```
 
-In order to return an object with all of the data about Luke Skywalker, we will have to iterate over this object and get all of the data associated with luke and transform this object to repalce the urls with the necessary data
+In order to return an object with all of the data about Luke Skywalker, we will have to iterate over this object and get all of the data associated with luke and transform this object to replace the urls with the necessary data
+
+## Docs For Reference
+ Documentation for the star wars api can be found here: https://swapi.dev/
 
 ## Project Setup
 To make things easier, this project makes use of a `Makefile` to wrap all of the commands you might need into easier commands. To setup the environment type this into your terminal:
