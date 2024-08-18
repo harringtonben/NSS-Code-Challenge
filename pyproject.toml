@@ -9,6 +9,7 @@ packages = [{include = "challenge"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "^2.32.3"
+ipdb = "^0.13.13"
 
 
 [build-system]

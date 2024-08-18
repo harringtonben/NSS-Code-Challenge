@@ -3,20 +3,17 @@ from typing import Dict
 import requests
 
 
-BASE_URL = 'https://pokeapi.co/api/v2'
+BASE_URL = 'https://swapi.dev/api'
 
 
-def get_pikacho() -> Dict:
-    """Function that will get data on pikachu from the poke api
+def get_luke_skywalker() -> Dict:
+    """Function that will get data on luke skywalker from the star wars api
 
-    :returns: A dictionary of data about Pikachu
+    :returns: A dictionary of data about Luke Skywalker
     :rtype: Dict
     """
 
-    url = f'{BASE_URL}/pokemon/pikachu'
-
+    url = f'{BASE_URL}/people/1/'
     return_data = requests.get(url).json()
 
-    return_keys = ['abilities', 'base_experience', 'forms', 'height', 'held_items']
-    return_data = {key: value for key, value in return_data.items() if key in return_keys}
     return return_data

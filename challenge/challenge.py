@@ -1,10 +1,10 @@
 """NSS Code Challenge"""
-from challenge.api import get_pikacho
+from challenge.api import get_luke_skywalker
 
 
 def get_all_the_data():
     """entry point for code challenge"""
 
-    pikachu = get_pikacho()
+    luke = get_luke_skywalker()
 
-    return pikachu
+    return luke

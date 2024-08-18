@@ -13,4 +13,5 @@ def run_solution():
     print('*' * 100)
 
 
-run_solution()
+if __name__ == "__main__":
+    run_solution()
